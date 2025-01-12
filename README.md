@@ -93,5 +93,5 @@ I erased those codes because I realized it was the code "@import url('https://fo
 
 "import { plus_jakarta_sans } from "./layout";"
 
-- I replaced all <img> tags with <Image> from next/image, I added the width and height properties to every <Image> component and set both of those properties to 90 with the code width={90} 
-  height={90} that I added to all <Image /> tags. 
+- I replaced all < img > tags with < Image > from next/image, I added the width and height properties to every < Image > component and set both of those properties to 90 with the code width={90} 
+  height={90} that I added to all < Image /> tags. 
