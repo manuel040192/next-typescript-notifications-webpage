@@ -29,7 +29,7 @@
 
 - Eliminé los siguientes códigos:
 
-En src/app/layout.tsx:
+1) En src/app/layout.tsx:
 
 1.1) "import { Inter, Plus_Jakarta_Sans } from 'next/font/google';"
 
