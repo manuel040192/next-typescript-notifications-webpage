@@ -27,6 +27,30 @@
 
 - Implementé el código de renderizado condicional para el botón `{!allRead && (<button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read)}. Este botón se muestra solo cuando hay notificaciones no leídas, mejorando la experiencia del usuario al proporcionar una forma intuitiva de marcar todas las notificaciones como leídas con un solo clic.
 
+- Eliminé los siguientes códigos:
+
+En src/app/layout.tsx:
+
+1.1) "import { Inter, Plus_Jakarta_Sans } from 'next/font/google';"
+
+1.2) "const inter = Inter({ subsets: ['latin'] });
+
+export const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-plus_jakarta_sans', weight: ['500', '800'], })"
+
+1.3) El código "className={plus_jakarta_sans.variable}" que estaba dentro de "<body className={plus_jakarta_sans.variable}>{children}</body>".
+
+2) En src/app/page.tsx:
+
+"import { plus_jakarta_sans } from './layout';"
+
+Eliminé esos códigos porque me di cuenta de que era el código "@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+/* Luego especifica en tu CSS donde sea necesario / .plusJakartaSans500 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; /* Para el peso 500 */ }
+
+.plusJakartaSans800 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; /* Para el peso 800 */ }", que está dentro de src/app/page.module.css, el que habilitaba que la fuente Plus Jakarta Sans apareciera en el proyecto.
+
+- Reemplacé todas las etiquetas < img > con el componente < Image > de next/image, añadí las propiedades width y height a cada componente < Image > y configuré ambos valores a 90 con el código width={90} height={90} que añadí a todas las etiquetas < Image />.
+
 
 
 **Highlighted information:**
