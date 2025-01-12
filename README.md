@@ -1,4 +1,4 @@
-**Notifications App**
+**Next TypeScript Notifications Webpage**
 
 **Información destacada:**
 
