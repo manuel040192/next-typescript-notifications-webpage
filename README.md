@@ -25,9 +25,9 @@ https://next-typescript-notifications-webpage-manuel040192s-projects.vercel.app/
 
 - Implementé el código const unreadCount = notifications ? notifications.filter(notification => !notification.read).length : 0; para calcular eficientemente el número total de notificaciones no leídas. Esto utiliza el método filter para filtrar dinámicamente las notificaciones en función de su propiedad read y calcular la cantidad en tiempo real, asegurando un seguimiento preciso y actualizado de las notificaciones no leídas para una mejor experiencia de usuario.
 
-- Agregué la expresión condicional {!notification.read && <div className={styles.red-circle}></div>} para indicar visualmente las notificaciones no leídas renderizando un círculo rojo de forma dinámica. Esto asegura que el usuario pueda identificar fácilmente las notificaciones que requieren atención.
+- Agregué la expresión condicional {!notification.read && < div className={styles.red-circle}></ div>} para indicar visualmente las notificaciones no leídas renderizando un círculo rojo de forma dinámica. Esto asegura que el usuario pueda identificar fácilmente las notificaciones que requieren atención.
 
-- Implementé el código de renderizado condicional para el botón `{!allRead && (<button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read)}. Este botón se muestra solo cuando hay notificaciones no leídas, mejorando la experiencia del usuario al proporcionar una forma intuitiva de marcar todas las notificaciones como leídas con un solo clic.
+- Implementé el código de renderizado condicional para el botón `{!allRead && (< button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read</ button>)}. Este botón se muestra solo cuando hay notificaciones no leídas, mejorando la experiencia del usuario al proporcionar una forma intuitiva de marcar todas las notificaciones como leídas con un solo clic.
 
 - Eliminé los siguientes códigos:
 
@@ -39,7 +39,7 @@ https://next-typescript-notifications-webpage-manuel040192s-projects.vercel.app/
 
 export const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-plus_jakarta_sans', weight: ['500', '800'], })"
 
-1.3) El código "className={plus_jakarta_sans.variable}" que estaba dentro de "<body className={plus_jakarta_sans.variable}>{children}</body>".
+1.3) El código "className={plus_jakarta_sans.variable}" que estaba dentro de "< body className={plus_jakarta_sans.variable}>{children}</ body>".
 
 2) En src/app/page.tsx:
 
@@ -81,9 +81,9 @@ notifications.forEach(notification => notification.read = true);
 
 - I implemented the code const unreadCount = notifications ? notifications.filter(notification => !notification.read).length : 0; to efficiently compute the total number of unread notifications. This leverages the filter method to dynamically filter notifications based on their read property and calculate the count in real time, ensuring accurate and up-to-date tracking of unread notifications for enhanced user experience.
 
-- I added the conditional expression {!notification.read && <div className={styles.red-circle}></div>} to visually indicate unread notifications by rendering a red circle dynamically. This ensures that the user can easily identify notifications that require attention.
+- I added the conditional expression {!notification.read && < div className={styles.red-circle}></ div>} to visually indicate unread notifications by rendering a red circle dynamically. This ensures that the user can easily identify notifications that require attention.
 
-- I implemented the conditional button rendering code {!allRead && (<button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read</button>)}. This button is displayed only when there are unread notifications, enhancing the user experience by providing an intuitive way to mark all notifications as read in one click.
+- I implemented the conditional button rendering code {!allRead && (< button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read</ button>)}. This button is displayed only when there are unread notifications, enhancing the user experience by providing an intuitive way to mark all notifications as read in one click.
 
 - I erased the following codes: 
 
@@ -100,7 +100,7 @@ export const plus_jakarta_sans = Plus_Jakarta_Sans({
   weight: ['500', '800'],
 })"
 
-1.3) The code "className={plus_jakarta_sans.variable}" that was inside "<body className={plus_jakarta_sans.variable}>{children}</body>".
+1.3) The code "className={plus_jakarta_sans.variable}" that was inside "< body className={plus_jakarta_sans.variable}>{children}</ body>".
 
 I erased those codes because I realized it was the code "@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
 
