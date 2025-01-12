@@ -27,6 +27,8 @@
 
 - Implementé el código de renderizado condicional para el botón `{!allRead && (<button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read)}. Este botón se muestra solo cuando hay notificaciones no leídas, mejorando la experiencia del usuario al proporcionar una forma intuitiva de marcar todas las notificaciones como leídas con un solo clic.
 
+
+
 **Highlighted information:**
 
 - To make the "Mark all as read" button change its color when the pointer hovers over the button, I added the following code to the page.module.css file: .markAllAsRead {
@@ -56,3 +58,40 @@ notifications.forEach(notification => notification.read = true);
 - I added the conditional expression {!notification.read && <div className={styles.red-circle}></div>} to visually indicate unread notifications by rendering a red circle dynamically. This ensures that the user can easily identify notifications that require attention.
 
 - I implemented the conditional button rendering code {!allRead && (<button onClick={handleMarkAllAsRead} className={${styles.markAllAsRead} ${styles.plusJakartaSans500}}>Mark all as read</button>)}. This button is displayed only when there are unread notifications, enhancing the user experience by providing an intuitive way to mark all notifications as read in one click.
+
+- I erased the following codes: 
+
+1) In src/app/layout.tsx:
+
+1.1) "import { Inter, Plus_Jakarta_Sans } from "next/font/google";" 
+
+1.2) "const inter = Inter({ subsets: ["latin"] });
+
+export const plus_jakarta_sans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-plus_jakarta_sans',
+  weight: ['500', '800'],
+})"
+
+1.3) The code "className={plus_jakarta_sans.variable}" that was inside "<body className={plus_jakarta_sans.variable}>{children}</body>".
+
+I erased those codes because I realized it was the code "@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+/* Luego especifica en tu CSS donde sea necesario */
+.plusJakartaSans500 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500; /* Para el peso 500 */
+}
+
+.plusJakartaSans800 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; /* Para el peso 800 */
+}" that is inside src/app/page.module.css that was enabling the font Plus Jakarta Sans to appear in the project.
+
+2) In src/app/page.tsx:
+
+"import { plus_jakarta_sans } from "./layout";"
+
+- I replaced all <img> tags with <Image> from next/image, I added the width and height properties to every <Image> component and set both of those properties to 90 with the code width={90} 
+  height={90} that I added to all <Image /> tags. 
