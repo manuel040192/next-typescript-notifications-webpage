@@ -1,8 +1,8 @@
 'use client'
 
-import { plus_jakarta_sans } from "./layout";
 import styles from "./page.module.css";
 import React from 'react';
+import Image from 'next/image';
 import notifications from './notifications.json';
 
 // Primero, definimos una interfaz para las notificaciones
@@ -19,94 +19,6 @@ interface Notification {
   read: boolean;
 }
 
- {/* const notifications: Notification[] = [
-  {
-    id: '1',
-    avatar: '/images/avatar-mark-webber.webp',  
-    name: 'Mark Webber',
-    text: 'reacted to your recent post',
-    postName: 'My first tournament today!',
-    groupName: '',
-    message: '',
-    image: '',
-    time: '1m ago',
-    read: false,
-  },
-  {
-    id: '2',
-    avatar: '/images/avatar-angela-gray.webp',  
-    name: 'Angela Gray',
-    text: 'followed you',
-    postName: '',
-    groupName: '',
-    message: '',
-    image: '',
-    time: '5m ago',
-    read: false,
-  },
-  {
-    id: '3',
-    avatar: '/images/avatar-jacob-thompson.webp',  
-    name: 'Jacob Thompson',
-    text: '',
-    postName: '',
-    groupName: '',
-    message: '',
-    image: '',
-    time: '1 day ago',
-    read: false,
-  },
-  {
-    id: '4',
-    avatar: '/images/avatar-rizky-hasanuddin.webp',  
-    name: 'Rizky Hasanuddin',
-    text: 'sent you a private message',
-    postName: '',
-    groupName: '',
-    message: 'Hello, thanks for setting up the Chess Club. Ive been a member for a few weeks now and Im already having lots of fun and improving my game.',
-    image: '',
-    time: '5 days ago',
-    read: true,
-  },
-  {
-    id: '5',
-    avatar: '/images/avatar-kimberly-smith.webp',  
-    name: 'Kimberly Smith',
-    text: 'commented on your picture',
-    postName: '',
-    groupName: '',
-    message: '',
-    image: '/images/image-chess.webp',
-    time: '1 week ago',
-    read: true,
-  },
-  {
-    id: '6',
-    avatar: '/images/avatar-nathan-peterson.webp',  
-    name: 'Nathan Peterson',
-    text: 'reacted to your recent post',
-    postName: '5 end-game strategies to increase your win rate',
-    groupName: '',
-    message: '',
-    image: '',
-    time: '2 weeks ago',
-    read: true,
-  },
-  {
-    id: '7',
-    avatar: '/images/avatar-anna-kim.webp',  
-    name: 'Anna Kim',
-    text: 'left the group',
-    postName: '',
-    groupName: 'Chess Club',
-    message: '',
-    image: '',
-    time: '2 weeks ago',
-    read: true,
-  }
-]; */}  
-
-// Luego, creamos un componente de notificación
 const NotificationCard: React.FC<{ notification: Notification }> = ({ notification }) => {
   return (
     <div className={`
@@ -115,7 +27,8 @@ const NotificationCard: React.FC<{ notification: Notification }> = ({ notificati
       ${notification.image ? styles.gridWithImage : styles.gridWithoutimage}
     `}>
       <div className={styles.avatarContainer}> {/* div A */}
-        <img src={notification.avatar} alt="Avatar" className={styles.userAvatar} />
+        <Image src={notification.avatar} alt="Avatar" className={styles.userAvatar} width={90} 
+  height={90} />
       </div>
       <div className={styles.contentContainer}> {/* div B */}
         <div className={styles.textAndRedCircleContainer}>
@@ -137,7 +50,8 @@ const NotificationCard: React.FC<{ notification: Notification }> = ({ notificati
       </div>
       {notification.image && 
         <div className={styles.imageContainer}> {/* div C */}
-          <img src={notification.image} alt="Chess game" className={styles.postImage} />
+          <Image src={notification.image} alt="Chess game" className={styles.postImage} width={90} 
+  height={90}/>
         </div>}
     </div>
   );
