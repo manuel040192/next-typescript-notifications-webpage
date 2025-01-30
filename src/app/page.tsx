@@ -9,12 +9,12 @@ import notifications from './notifications.json';
 interface Notification {
   id: string;
   avatar: string;
-  name: string;         // Añadido
-  text?: string;         // Añadido
-  postName?: string;    // Añadido (opcional)
-  groupName?: string;   // Añadido (opcional)
-  message?: string;
-  image?: string;       // Añadido (opcional)
+  name: string;         
+  text: string;         
+  postName?: string;    // Opcional
+  groupName?: string;   // Opcional
+  message?: string;     // Opcional
+  image?: string;       // Opcional
   time: string;
   read: boolean;
 }
