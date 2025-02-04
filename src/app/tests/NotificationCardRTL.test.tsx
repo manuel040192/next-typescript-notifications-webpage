@@ -1,5 +1,6 @@
+import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
-import NotificationCard from "../NotificationCard";
+import NotificationCard from "../page.tsx";
 import notifications from "../notifications.json";
 
 describe("NotificationCard Component - React Testing Library", () => {

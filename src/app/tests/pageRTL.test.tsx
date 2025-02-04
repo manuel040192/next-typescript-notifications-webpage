@@ -1,5 +1,6 @@
+import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
-import NotificationsPage from "../page";
+import NotificationsPage from "../page.tsx";
 import notifications from "../notifications.json";
 
 describe("NotificationsPage Component - React Testing Library", () => {
